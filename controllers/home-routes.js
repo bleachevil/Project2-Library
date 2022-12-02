@@ -4,21 +4,21 @@ const { Gallery, Books } = require('../models');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: books,
-          attributes: ['title', 'description'],
-        },
-      ],
+    const dbBookData = await Books.findAll({
+      // include: [
+      //   {
+      //     model: books,
+      //     attributes: ['title', 'description'],
+      //   },
+      // ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const books = dbBookData.map((book) =>
+      book.get({ plain: true })
     );
-    // Send over the 'loggedIn' session variable to the 'homepage' template
+    //Send over the 'loggedIn' session variable to the 'homepage' template
     res.render('homepage', {
-      galleries,
+      books,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
