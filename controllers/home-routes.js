@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Gallery, Books } = require('../models');
+const { Books } = require('../models');
 
-// GET all galleries for homepage
+// GET all books for homepage
 router.get('/', async (req, res) => {
   try {
     const dbBookData = await Books.findAll({
@@ -27,28 +27,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
-router.get('/gallery/:id', async (req, res) => {
+// GET one books
+router.get('/books/:id', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
-      include: [
-        {
-          model: books,
-          attributes: [
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
-          ],
-        },
-      ],
-    });
+    const dbBookData = await Books.findByPk(req.params.id, 
+    //   {
+    //   include: [
+    //     {
+    //       model: books,
+    //       attributes: [
+    //         'id',
+    //         'title',
+    //         'authors',
+    //         'description',
+    //       ],
+    //     },
+    //   ],
+    // }
+    );
 
-    const gallery = dbGalleryData.get({ plain: true });
+    const book = dbBookData.get({ plain: true });
     // Send over the 'loggedIn' session variable to the 'gallery' template
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+    res.render('book', { book, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

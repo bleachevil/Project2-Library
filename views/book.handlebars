@@ -1,0 +1,17 @@
+<section class="container">
+  <h3 class="gallery-name">{{title}}</h3>
+  {{!-- <h4>Opening Hour: {{format_time gallery.starting_date}}</h4>
+  <h4>Closing Hour: {{format_time gallery.ending_date}}</h4> --}}
+  <!-- If the user is logged in, render the gallery content -->
+  {{!-- {{#if loggedIn}} --}}
+<section class="painting">
+  <img src="{{thumbnail}}" alt="{{title}}">
+  <div class="painting-details">
+    <h3>{{title}}</h3>
+    <p>By: {{books.author}}</p>
+  </section>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{!-- {{else}}
+<a href="/login">You must login first to view the paintings</a>
+{{/if}} --}}
