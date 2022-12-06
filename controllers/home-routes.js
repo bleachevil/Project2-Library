@@ -34,26 +34,12 @@ router.get('/books/:id', async (req, res) => {
 
     const book = dbBookData.get({ plain: true });
     // Send over the 'loggedIn' session variable to the 'gallery' template
-    res.render('book', {book});   //loggedIn: req.session.loggedIn
+    res.render('book', {book, loggedIn: req.session.loggedIn});   //loggedIn: req.session.loggedIn
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
-// GET one painting
-// router.get('/painting/:id', async (req, res) => {
-//   try {
-//     const dbPaintingData = await books.findByPk(req.params.id);
-
-//     const books = dbPaintingData.get({ plain: true });
-//     // Send over the 'loggedIn' session variable to the 'homepage' template
-//     res.render('painting', { books, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 // Login route
 router.get('/login', (req, res) => {
@@ -64,6 +50,19 @@ router.get('/login', (req, res) => {
   }
   // Otherwise, render the 'login' template
   res.render('login');
+});
+
+
+// User route
+router.get('/user', (req, res) => {
+ try { // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }} catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

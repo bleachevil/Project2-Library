@@ -1,7 +1,7 @@
 <!-- If the user is logged in, render the painting content -->
 {{#if loggedIn}}
 <section class="painting">
-  <img src="/images/{{painting.filename}}" alt="{{painting.description}}">
+  <img src="/images/{{painting.filename}}" alt="{{description}}">
   <div class="painting-details">
     <h3>{{painting.title}}</h3>
     <p>By: {{painting.artist}}</p>
@@ -10,5 +10,5 @@
 </section>
 <!-- Otherwise, provide a link to login -->
 {{else}}
-<a href="/login">You must login first to view this painting</a>
+<a href="/login">You must login first to view this book</a>
 {{/if}}
