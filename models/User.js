@@ -37,7 +37,7 @@ User.init(
     },
     favorite: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
