@@ -8,9 +8,9 @@
     <p>By: {{book.authors}}</p>
     <p>Publish Year: {{ book.published_year}}</p>
   </div>
-  <form class = "edit-book-form">
-  <label for="quantity">User ID: </label>
-  <input type="number" id="quantity" min="1" max="100">
+  <form class = "edit-book-form" >
+  <label for="userId">User Id: </label>
+  <input type="number" id="userId" min="1" max="100">
   <input type="submit" value="Add to your Favorite">   
   </form>
 </section>
@@ -18,3 +18,6 @@
 {{else}}
 <a href="/login">You must login first to view this book</a>
 {{/if}}
+
+<script src="../js/add-fav.js"></script>
+{{!-- <script src="/controllers/home-routes.js"></script> --}}

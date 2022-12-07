@@ -1,6 +1,6 @@
 async function editFormHandler(event) {
     event.preventDefault();
-    const user_id = document.querySelector('#quantity');
+    const user_id = document.querySelector('#userId').value;
   
     // window.location gives us access to the URL. We then use the .split() method to access the number at the end of the URL and set that equal to id.
     const id = window.location.toString().split('/')[
@@ -10,10 +10,10 @@ async function editFormHandler(event) {
     // What part of our application will handle this 'put' request?
     // The Controller will handle this 'put' request.
   
-    const response = await fetch(`/api/books/${id}`, {
+    const response = await fetch(`/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        user_id,
+        user_id
       }),
       headers: {
         'Content-Type': 'application/json',
