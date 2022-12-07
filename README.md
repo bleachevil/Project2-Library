@@ -27,7 +27,7 @@ It has been deployed using [Heroku](https://...)
 3. Type 'source db/schema.sql' in your terminal
 4. Type 'source db/seed.sql'  in your terminal
 5. Quit
-6. Run 'node serves.js' in the terminal while in root directory of the cloned project.
+6. Run 'node server.js' in the terminal while in root directory of the cloned project.
 
 ## Screenshoot
 ![1](./)
