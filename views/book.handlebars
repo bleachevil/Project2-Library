@@ -8,11 +8,18 @@
     <p>By: {{book.authors}}</p>
     <p>Publish Year: {{ book.published_year}}</p>
   </div>
-  <form class = "edit-book-form" >
+
+  {{#if book.user_id}}
+
+   <p>User_ID: {{book.user.username}}</p>
+
+  {{else}}
+   <form class = "edit-book-form" >
   <label for="userId">User Id: </label>
   <input type="number" id="userId" min="1" max="100">
   <input type="submit" value="Add to your Favorite">   
   </form>
+  {{/if}}
 </section>
 <!-- Otherwise, provide a link to login -->
 {{else}}

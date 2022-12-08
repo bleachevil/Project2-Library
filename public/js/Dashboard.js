@@ -5,7 +5,7 @@ const dashboard = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/users');
+      document.location.replace('/');
     } else {
       alert('Failed to log out.');
     }
