@@ -141,6 +141,7 @@ router.get('/user/:id', async (req, res) => {
     });
 
     const user = dbUserData.get({ plain: true });
+    console.log(user)
     // Send over the 'loggedIn' session variable to the 'user' template
     res.render('user', { user, loggedIn: req.session.loggedIn });
   } catch (err) {
