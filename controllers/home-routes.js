@@ -127,7 +127,7 @@ router.get('/user', (req, res) => {
 // GET one user
 router.get('/user/:id', async (req, res) => {
   try {
-    const dbGalleryData = await User.findByPk(req.params.id, {
+    const dbUserData = await User.findByPk(req.params.id, {
       include: [
         {
           model: Books,
