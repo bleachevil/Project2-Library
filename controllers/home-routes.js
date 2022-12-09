@@ -86,17 +86,18 @@ router.put('/:id', async (req, res) => {
 
 // delete fav
 
-router.put('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   // Where is this action method sending the data from the body of the fetch request? Why?
   // It is sending the data to the Model so that one dish can be updated with new data in the database.
   try {
-    const book = await Books.destroy(
+    const book = await Books.update(
       {
-        user_id: req.body.user_id,
+        user_id: null,
       },
       {
         where: {
           id: req.params.id,
+          user_id: req.body.user_id
         },
       }
     );

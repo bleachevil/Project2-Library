@@ -6,6 +6,7 @@ async function editFormHandler(event) {
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
+    //console.log(id)
   
     // What part of our application will handle this 'put' request?
     // The Controller will handle this 'put' request.
