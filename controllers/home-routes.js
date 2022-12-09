@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       books,
       loggedIn: req.session.loggedIn,
+      userID:req.session.userID
     });
   } catch (err) {
     console.log(err);
@@ -41,7 +42,7 @@ router.get('/books/:id', async (req, res) => {
     const book = dbBookData.get({ plain: true });
     //console.log(book)
     // Send over the 'loggedIn' session variable to the 'gallery' template
-    res.render('book', {book, loggedIn: req.session.loggedIn});   //loggedIn: req.session.loggedIn
+    res.render('book', {book, loggedIn: req.session.loggedIn, userID:req.session.userID});   //loggedIn: req.session.loggedIn
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,6 +59,9 @@ router.get('/login', (req, res) => {
   // Otherwise, render the 'login' template
   res.render('login');
 });
+
+
+//gets that render handlebars and pass data to them
 
 // Update fav
 
@@ -111,16 +115,6 @@ router.delete('/:id', async (req, res) => {
 
 
 
-// User route
-router.get('/user', (req, res) => {
-  // If the user is already logged in, redirect to the homepage
-  if (req.session.loggedIn) {
-    res.redirect('/user/:id');
-    return;
-  }
-  // Otherwise, render the 'login' template
-  res.render('user');
-});
 
 
 
@@ -135,6 +129,8 @@ router.get('/user/:id', async (req, res) => {
             'id',
             'title',
             'authors',
+            'thumbnail',
+            'description',
           ],
         },
       ],

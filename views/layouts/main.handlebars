@@ -18,7 +18,10 @@
     <!-- If the user is logged in, show a logout button -->
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
-     <a href="/user">Dashboard</a>
+
+     <a href='/user/{{userID}}'>Dashboard</a>
+
+
     {{else}}
     <!-- Otherwise, show a link to login -->
     <a href="/login">Login</a>
@@ -34,6 +37,7 @@
   </main>
   <!-- If the user is logged in, load the JS script for when they logout -->
   {{#if loggedIn}}
+
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>

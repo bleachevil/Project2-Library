@@ -31,6 +31,7 @@ router.post('/login', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      
     });
 
     if (!dbUserData) {
@@ -39,6 +40,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
+
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
@@ -52,6 +54,11 @@ router.post('/login', async (req, res) => {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userID=dbUserData.id;
+
+      // const findId = bdbUserData.id;
+      // console.log("------")
+      // console.log(findId)
 
       res
         .status(200)
@@ -75,5 +82,29 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+// delete user
+
+router.delete('/:id', async (req, res) => {
+  console.log(req.params.id)
+  // Where is this action method sending the data from the body of the fetch request? Why?
+  // It is sending the data to the Model so that one dish can be updated with new data in the database.
+  try {
+    const userId = await User.destroy(
+
+      {
+        where: {
+          id: req.params.id
+        },
+      }
+    );
+    console.log(userId)
+    // If the database is updated successfully, what happens to the updated data below?
+    // The updated data (dish) is then sent back to handler that dispatched the fetch request.
+    res.status(200).json(userId);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

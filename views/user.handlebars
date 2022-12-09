@@ -5,12 +5,22 @@
   <!-- If the user is logged in, render the gallery content -->
   {{#if loggedIn}}
   <section class="flex-row justify-center">
-    {{#each books as |book|}}
+    {{#each user.books as |book|}}
     {{> user-details}}
     {{/each}}
   </section>
+  <div>
+    <form class = "delete-user-form" >
+    <label for="userId">User Id: </label>
+    <input type="number" id="userId" min="1" max="100">
+    <input type="submit" id="logout" value="Delete your Profile">
+    </form>
+  </div>
 </section>
 <!-- Otherwise, provide a link to login -->
 {{else}}
 <a href="/login">You must login first to view the paintings</a>
 {{/if}}
+
+<script src="/js/delete-user.js"></script>
+  <script src="/js/logout.js"></script>
