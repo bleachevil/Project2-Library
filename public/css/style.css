@@ -25,7 +25,7 @@ a {
 }
 
 a:visited {
-  color: inherit;
+  color: var(--light);
 }
 
 header {
@@ -67,13 +67,18 @@ nav a:hover {
 }
 
 .gallery {
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-image:url("https://kanooniyat.com/wp-content/uploads/2020/04/Papers.jpg");
+  background-size: contain;
   flex: 4;
   background-color: #fff;
   padding: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  font-size: 20px;
 }
 
 .btn-no-style {
@@ -140,7 +145,7 @@ img {
 }
 
 .card-body {
-  font-size: 1.4rem;
+  font-size: 2rem;
   text-align: center;
   font-weight: bold;
 }
