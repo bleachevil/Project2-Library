@@ -134,6 +134,18 @@ const bookdata = [
   "average_rating": "4.15",
   "num_pages": 460,
   "ratings_count": 133972,
+},
+{
+  "title": "Miss Marple",
+  "subtitle": "The Complete Short Stories",
+  "authors": "Agatha Christie",
+  "categories": "Detective and mystery stories, English",
+  "thumbnail": "http://books.google.com/books/content?id=a96qPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+  "description": "Miss Marple featured in 20 short stories, published in a number of different collections in Britain and America. Presented here in their order of publication, Miss Marple uses her unique insight to deduce the truth about a series of unsolved crimes.",
+  "published_year": 1997,
+  "average_rating": "4.15",
+  "num_pages": 359,
+  "ratings_count": 6235,
 }
 
 ];

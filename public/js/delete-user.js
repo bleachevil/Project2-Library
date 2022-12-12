@@ -31,7 +31,7 @@ async function deleteUserFormHandler(event) {
       alert('Failed to delete');
     }
   }
-  document.querySelector('.delete-user-form').addEventListener('click', deleteUserFormHandler);
+  document.querySelector('.delete-user-form').addEventListener('submit', deleteUserFormHandler);
   
   
   
