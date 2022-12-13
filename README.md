@@ -4,14 +4,14 @@
 
 
 ## Description
-*
-**
+The project developed mainly focuses on basic operations in a library like adding new member, new books, and updating new information, searching books and members and facility to issue and return books.
 
 ## Deploying
-It has been deployed using [Heroku](https://...) 
+It has been deployed using [Heroku](https://project2library.herokuapp.com/) 
 
 ## Table of Contents
 * [Installation](#installation)
+* [Technologies](#Technologies)
 * [Screenshoot](#screenshoot)
 * [License](#license)
 * [Developers](#developers)
@@ -19,19 +19,24 @@ It has been deployed using [Heroku](https://...)
 
 
 ## Installation
-* Heroku: You can access the application in the easiest way using the [Heroku](https://...) 
+* Heroku: You can access the application in the easiest way using the [Heroku](https://project2library.herokuapp.com/) 
 
 * Localhost: 
 1. Clone this project in to your local machine.
 2. Type ''mysql -u root -p'' in your terminal
 3. Type 'source db/schema.sql' in your terminal
-4. Type 'source db/seed.sql'  in your terminal
-5. Quit
-6. Run 'node server.js' in the terminal while in root directory of the cloned project.
+4. Quit
+5. Run 'node server.js' in the terminal while in root directory of the cloned project.
+
+## Technologies
+Javascript, Node.js, Express, HTML (handlebars), CSS, MySQL, Sequelize
 
 ## Screenshoot
-![1](./)
-![2](./)
+![1](./public/images/ss1.png)
+![2](./public/images/ss2.png)
+![3](./public/images/ss3.png)
+![4](./public/images/ss4.png)
+![5](./public/images/ss5.png)
 
 
 ## License
@@ -66,4 +71,4 @@ SOFTWARE.
 
 ## Questions
 
-For any questions or to report issues, email us at: burakcersit1@gmail.com, jeff@gmail.com, Malek@gmail.com, Abel@gmail.com, Serhiy@gmail.com
+For any questions or to report issues, email us at: burakcersit1@gmail.com, saubby27@gmail.com, szvedenyuk2@gmail.com
