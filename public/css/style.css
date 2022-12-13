@@ -151,9 +151,9 @@ img {
 }
 
 .gallery-name {
-  color: var(--light);
   text-transform: uppercase;
   letter-spacing: 3px;
+  color: var(--light);
   text-shadow: 2px 2px 5px var(--light);
   border: 10px groove var(--light);
   padding-top: 30px;
