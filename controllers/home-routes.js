@@ -66,7 +66,7 @@ router.get('/login', (req, res) => {
 // Update fav
 
 router.put('/:id', async (req, res) => {
-  // Where is this action method sending the data from the body of the fetch request? Why?
+  
   // It is sending the data to the Model so that one dish can be updated with new data in the database.
   try {
     const book = await Books.update(
@@ -79,7 +79,7 @@ router.put('/:id', async (req, res) => {
         },
       }
     );
-    // If the database is updated successfully, what happens to the updated data below?
+    
     // The updated data (dish) is then sent back to handler that dispatched the fetch request.
     res.status(200).json(book);
   } catch (err) {
@@ -91,7 +91,7 @@ router.put('/:id', async (req, res) => {
 // delete fav
 
 router.delete('/:id', async (req, res) => {
-  // Where is this action method sending the data from the body of the fetch request? Why?
+  
   // It is sending the data to the Model so that one dish can be updated with new data in the database.
   try {
     const book = await Books.update(
@@ -105,7 +105,7 @@ router.delete('/:id', async (req, res) => {
         },
       }
     );
-    // If the database is updated successfully, what happens to the updated data below?
+    
     // The updated data (dish) is then sent back to handler that dispatched the fetch request.
     res.status(200).json(book);
   } catch (err) {
